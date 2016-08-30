@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>     
+        <title>JTG|Assignment</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="/static/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/static/assets/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/static/assets/css/form-elements.css">
+        <link rel="stylesheet" href="/static/assets/css/style.css">
+
+
+    </head>
+
+    <body>
+
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                	
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1>JTG Assignment | Second Phase</h1>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>1st API Test</h3>
+	                            		<p>Enter Organisation ID:</p>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form role="form" action="/api/org" method="get" class="login-form">
+				                    	<div class="form-group">
+				                    		<label class="sr-only" for="form-org-id">Organisation ID</label>
+				                        	<input type="text" name="org_id" placeholder="Organisation ID..." class="form-username form-control">
+				                        </div>
+				                       
+				                        <button type="submit" class="btn">Show Details!!</button>
+				                    </form>
+			                    </div>
+		                    </div>
+	                        
+                        </div>
+                        
+                        <div class="col-sm-1 middle-border"></div>
+                        <div class="col-sm-1"></div>
+                        	
+                        <div class="col-sm-5">
+                        	
+                        	<div class="form-box">
+                        		<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>2nd API Test</h3>
+	                            		<p>To get User Details:</p>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form  method="get" action="/api/user/" >
+				                        <input type="hidden"  name="user_id" value="{{ request.user.id }}" class="form-username form-control">
+				                        <button type="submit" class="btn">Show my Details !!</button>
+				                    </form>
+			                    </div>
+                        	</div>
+                        	
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Footer -->
+        <footer>
+        	<div class="container">
+        		<div class="row">
+        			
+        			<div class="col-sm-8 col-sm-offset-2">
+        				<div class="footer-border"></div>
+        				<p>For any query please contact me on <strong>mailtokgupta@gmail.com </strong><i class="fa fa-smile-o"></i></p>
+        			</div>
+        			
+        		</div>
+        	</div>
+        </footer>
+
+        <!-- Javascript -->
+        <script src="/static/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="/static/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/static/assets/js/scripts.js"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="/static/assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

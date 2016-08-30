@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #19b9e7;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<a href="/"><b>Back To The Home Page</b></a><center><h2>USER RELATED DETAILS</h2></center>
+<center><strong><p>Name : {% if user.get_full_name  %}{{ user.get_full_name }} {% else %} {{ user.username }} {% endif %}</p></strong></center>
+{% if admin %} <marquee> You are Admin User and not associated with any Organisation </marquee> {% else %}
+<table>
+  <tr>
+    <th>TEAM</th>
+    <th>ORG</th>
+    <th>REPO</th>
+  </tr>
+{% for team in user.user_team.all %}
+  <tr>
+    <td>{{ team.name }}</td>
+    <td>{% if team.parent_team %}{{ team.parent_team.org.name }}{% else %}{{ team.org.name }}{% endif %}</td>
+    <td>{% if team.team_repo.all %}{% for repo in team.team_repo.all %}
+    {{ repo.repo_name }} {% if not forloop.last %}, {% endif %}
+    {% endfor %}{% else %}  {% endif %}</td>
+  </tr>
+{% endfor %}
+</table>
+{% endif %}
+</body>
+</html>

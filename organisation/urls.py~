@@ -1,0 +1,9 @@
+import organisation.views as views
+
+from django.conf.urls import url, patterns
+
+urlpatterns = patterns(
+    'organisation.views',
+    url(r'^$', 'home'),
+    
+)

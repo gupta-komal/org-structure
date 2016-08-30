@@ -1,0 +1,38 @@
+<html>
+<head>
+    <style>
+        ul.n {list-style-type: None;}
+        ul.a {list-style-type: circle;}
+        ul.b {list-style-type: square;}
+        ul.c {list-style-type: disc;}
+    </style>
+</head>
+<body>
+ <a href="/"><b>Back To The Home Page</b></a><h2>ORGANISATION RELATED DETAILS</h2>
+<div>
+<ul class="n"><li>{{ org.name }}
+<ul class="a">
+{% for team in org_team %}
+<li>{{ team.name }}
+  <ul class="b">
+    {% for child in team.team_set.all %}
+  <li>
+      {{ child.name }}
+      <ul class="c">
+       {% for repo in child.team_repo.all %} <li>{{ repo.repo_name }}</li>{% endfor %}
+    </ul>
+  </li>
+    {% endfor %}
+  </li>
+  </ul>
+  <ul class="b">
+    {% for repo in team.team_repo.all %}<li>{{ repo.repo_name }}</li>{% endfor %}
+  </ul>
+</li>
+{% endfor %}
+</ul>
+</li>
+    </ul>
+</div >
+</body>
+</html>
